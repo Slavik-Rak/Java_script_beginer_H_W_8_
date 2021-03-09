@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+p, .addWrapUser {
+    text-align: center;
+}
+
+.wrapUserS {
+    border: 1px solid green;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapUser {
+    border: 1px solid rgb(7, 102, 12);
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.addWrapUser {
+    border: 1px solid rgb(27, 235, 54);
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+.wrapPosts {
+    border: 1px solid rgb(52, 16, 121);
+    width: 90%;
+    padding: 10px;
+}
+
+.wrapPost {
+    border: 1px solid rgb(30, 57, 206);
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.addPostInf {
+    border: 1px solid rgb(108, 167, 235);
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+/* --------------------------------- */
+
+.wrapComents {
+    border: 1px solid rgb(100, 8, 59);
+    width: 90%;
+    padding: 10px;
+}
+
+.wrapComent {
+    border: 1px solid rgb(182, 33, 115);
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.wrapComBody {
+    border: 1px solid rgb(255, 48, 162);
+    margin-bottom: 5px;
+    width: 95%;
+}
