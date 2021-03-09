@@ -102,14 +102,14 @@ document.body.appendChild(wrapUserS);
 
 /* async function showUserInfo() {
     let users = await fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json())
-
+ 
     console.log(users);
-
+ 
     for (let user of users) {
         console.log(user);
         let wrapUser = document.createElement('div');
         wrapUser.classList.add('wrapUser');
-
+ 
         for (let keyU in user) {
             if (typeof user[keyU] === 'object') {
                 wrapUser.innerHTML += `<b>${keyU}:</b> <br>`;
@@ -124,28 +124,28 @@ document.body.appendChild(wrapUserS);
                 wrapUser.innerHTML += `${keyU}: ${user[keyU]} <br>`;
             }
         }
-
+ 
         wrapUserS.appendChild(wrapUser);
     }
 }
-
+ 
 showUserInfo();
  */
 
 /* 
-
+ 
 let wrapUserS = document.createElement('div');
 wrapUserS.classList.add('wrapUserS');
 document.body.appendChild(wrapUserS);
-
+ 
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(value => value.json())
     .then(users => {
-
+ 
         for (let user of users) {
             let wrapUser = document.createElement('div');
             wrapUser.classList.add('wrapUser');
-
+ 
             for (let keyU in user) {
                 if (typeof user[keyU] === 'object') {
                     wrapUser.innerHTML += `<b>${keyU}:</b> <br>`;
@@ -160,12 +160,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
                     wrapUser.innerHTML += `${keyU}: ${user[keyU]} <br>`;
                 }
             }
-
+ 
             wrapUserS.appendChild(wrapUser);
         }
-
+ 
     })
-
+ 
  */
 
 
@@ -174,24 +174,24 @@ fetch('https://jsonplaceholder.typicode.com/users')
 // Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 
 /* 
-
+ 
 let wrapPosts = document.createElement('div');
 wrapPosts.classList.add('wrapPosts');
 document.body.appendChild(wrapPosts);
-
+ 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(value => value.json())
     .then(posts => {
         //  console.log(posts);
-
+ 
         for (let elemPost of posts) {
             let wrapPost = document.createElement('div')
             wrapPost.classList.add('wrapPost');
-
+ 
             for (keyp in elemPost) {
                 if (elemPost[keyp] === 'object') {
                     wrapPost.innerHTML += `<b>${keyp}</b>: <br>`;
-
+ 
                     let addPostInf = document.createElement('div');
                     addPostInf.classList.add('addPostInf');
                     let add = elemPost[keyp];
@@ -199,57 +199,57 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         addPostInf.innerHTML += `${keyAdd}: ${add[keyAdd]}<br>`
                     }
                     wrapPost.appendChild(addPostInf);
-
+ 
                 } else {
                     wrapPost.innerHTML += `${keyp}: ${elemPost[keyp]}<br>`
                 }
             }
-
+ 
             wrapPosts.appendChild(wrapPost);
         }
-
+ 
     })
-
+ 
  */
 // - за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі comments. 
 // За допомогою document.createElement вивести їх в браузер. 
 // Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 
 /* 
-
+ 
 fetch('https://jsonplaceholder.typicode.com/comments')
     .then(value => value.json())
     .then(comments => {
         //console.log(comments);
-
+ 
         let wrapComents = document.createElement('div');
         wrapComents.classList.add('wrapComents');
         document.body.appendChild(wrapComents);
-
+ 
         for (let coment of comments) {
             console.log(coment)
             let wrapComent = document.createElement('div');
             wrapComent.classList.add('wrapComent');
-
+ 
             for (let keyCom in coment) {
                 if (keyCom === 'body') {
-
+ 
                     let wrapComBody = document.createElement('div');
                     wrapComBody.classList.add('wrapComBody');
-
+ 
                     wrapComBody.innerHTML += `<b>coment:</b> <br>`;
                     wrapComBody.innerHTML += `${coment[keyCom]}`;
-
+ 
                     wrapComent.appendChild(wrapComBody);
                 } else {
-
+ 
                     wrapComent.innerHTML += `${keyCom}: ${coment[keyCom]} <br>`;
                 }
             }
             wrapComents.appendChild(wrapComent);
         }
     })
-
+ 
  */
 
 // -при помощи fetch (как в примере) получить от jsonplaceholder все posts. 
@@ -258,57 +258,62 @@ fetch('https://jsonplaceholder.typicode.com/comments')
 // Подсказка : в каждом comment есть поле postId которое определяет какой комментарий принадлежит какому посту
 
 
-// let wrapPosts = document.createElement('div');
-// wrapPosts.classList.add('wrapPosts');
-// document.body.appendChild(wrapPosts);
+let wrapPosts = document.createElement('div');
+wrapPosts.classList.add('wrapPosts');
+document.body.appendChild(wrapPosts);
 
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then(value => value.json())
-//     .then(posts => {
-//         //  console.log(posts);
-
-//         for (let elemPost of posts) {
-//             let wrapPost = document.createElement('div')
-//             wrapPost.classList.add('wrapPost');
-
-//             for (keyp in elemPost) {
-//                 if (elemPost[keyp] === 'object') {
-//                     wrapPost.innerHTML += `<b>${keyp}</b>: <br>`;
-
-//                     let addPostInf = document.createElement('div');
-//                     addPostInf.classList.add('addPostInf');
-//                     let add = elemPost[keyp];
-//                     for (let keyAdd in add) {
-//                         addPostInf.innerHTML += `${keyAdd}: ${add[keyAdd]}<br>`
-//                     }
-//                     wrapPost.appendChild(addPostInf);
-
-//                 } else {
-//                     wrapPost.innerHTML += `${keyp}: ${elemPost[keyp]}<br>`
-//                 }
-//             }
-
-//             wrapPosts.appendChild(wrapPost);
-//         }
-
-//     })
-
-
-
-fetch('https://jsonplaceholder.typicode.com/users/').then(value => value.json())
-    .then(users => {
-        for (let i = 0; i < users.length; i++) {
-           console.log(users[i]) 
-            let a = users[i];
-            fetch('https://jsonplaceholder.typicode.com/comments?postId=' + a.id).then(coments => coments.json())
+fetch('https://jsonplaceholder.typicode.com/posts').then(value => value.json())
+    .then(posts => {
+        for (let i = 0; i < posts.length; i++) {
+            let a = posts[i];
+            fetch('https://jsonplaceholder.typicode.com/comments?postId=' + a.userId).then(coments => coments.json())
                 .then(comentsUser => {
-                    console.log(comentsUser);
+
+                    let wrapPost = document.createElement('div')
+                    wrapPost.classList.add('wrapPost');
+
+                    for (let elem in a) {
+
+                        if (elem === 'object') {
+                            wrapPost.innerHTML += `<b>${elem}</b>: <br>`;
+                        } else {
+                            wrapPost.innerHTML += `${elem}: ${a[elem]}<br>`
+                        }
+
+                        wrapPosts.appendChild(wrapPost);
+                    }
+
+                    //---------------------------------------------------------------------------
+
+                    let wrapComents = document.createElement('div');
+                    wrapComents.classList.add('wrapComents');
+
+                    for (let coment of comentsUser) {
+
+                        let wrapComent = document.createElement('div');
+                        wrapComent.classList.add('wrapComent');
+
+                        for (let keyCom in coment) {
+                            if (keyCom === 'body') {
+
+                                let wrapComBody = document.createElement('div');
+                                wrapComBody.classList.add('wrapComBody');
+
+                                wrapComBody.innerHTML += `<b>coment:</b> <br>`;
+                                wrapComBody.innerHTML += `${coment[keyCom]}`;
+
+                                wrapComent.appendChild(wrapComBody);
+                            } else {
+
+                                wrapComent.innerHTML += `${keyCom}: ${coment[keyCom]} <br>`;
+                            }
+                        }                       
+                        wrapComents.appendChild(wrapComent);
+                    }
+                    wrapPosts.appendChild(wrapComents);
                 })
-
+                
         }
-
-
-
     })
 
 
